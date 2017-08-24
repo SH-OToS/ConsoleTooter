@@ -17,4 +17,6 @@ Please use it at your own risk when using it
 3. The character string used in the shell must be enclosed in ""
 4. An execution result can't be trusted.
 ## About Get_Api.sh
-Get_Api.sh is sh which can take an API interactively
+Get_Api.sh is sh which can take an API interactively. However, it is Japanese.
+
+
