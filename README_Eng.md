@@ -1,5 +1,5 @@
 # ConsoleTooter
-## This explanation was translated using automatic translation
+## *This explanation was translated using automatic translation
 ## Description
 You can use it when you want to toot a bit while working at the console
 
