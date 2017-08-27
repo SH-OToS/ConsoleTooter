@@ -6,6 +6,7 @@ You can use it when you want to toot a bit while working at the console
 Please use it at your own risk when using it
 ## Usage
 toot [comment]
+
 command | toot
 ## Preparation
 1. Place "toot" where the path passes
