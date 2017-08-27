@@ -1,12 +1,17 @@
 #!/bin/sh
-if [ $# -ne 1 ]; then
-sta=`curl -F "status=null" -sS $InstanceURL --header "Authorization: Bearer $TOKEN" -o /dev/null -w '%{http_code}'`
+if [ -t 0 ]; then
+  if [ $# -ne 1 ]; then
+    sta=`curl -F "status=null" -sS $InstanceURL --header "Authorization: Bearer $TOKEN" -o /dev/null -w '%{http_code}'`
+  else
+    sta=`curl -F "status=$1" -sS $InstanceURL --header "Authorization: Bearer $TOKEN" -o /dev/null -w '%{http_code}'`
+  fi
 else
-sta=`curl -F "status=$1" -sS $InstanceURL --header "Authorization: Bearer $TOKEN" -o /dev/null -w '%{http_code}'`
+  sta=`curl -F "status=$(cat -)" -sS $InstanceURL --header "Authorization: Bearer $TOKEN" -o /dev/null -w '%{http_code}'`
 fi
-if [ $sta = 200 ]; then 
+
+if [ $sta = 200 ]; then
 echo "200 OK!"
 else
-echo "Error!!"
+echo "Error!!!"
 fi
 exit 0
