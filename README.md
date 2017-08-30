@@ -13,6 +13,7 @@ toot
 3. tootの$InstanceURLをhttps://[インスタンスのドメイン]/api/v1/statusesに書き換えます
 4. tootの$TOKENをアクセストークンに書き換えます
 5. コマンド感覚でTootできます
+0. nullを草に置き換えると…
 ## 欠点
 1. タイムラインが見れない
 2. 通知が見れない
