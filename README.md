@@ -1,17 +1,18 @@
 # ConsoleTooter
 ## 説明
-コンソールで作業中にちょっとTootしたくなったときに使えます
+コンソールで作業中にちょっとTootしたくなったときに使えます  
+一応TLも見れます(ガバガバ実装)
 ## 書式
-toot [内容]
-
-command | toot
-
-toot
+toot [内容]  
+command | toot  
+toot  
+tlh  
+tlh [リミット数]
 ## 使い方
-1. まず適当にパスが通っている場所にtootを置きます
+1. まず適当にパスが通っている場所にtoot(お好みでtlh)を置きます
 2. お好きなインスタンスのアクセストークンを取得します
-3. tootの$InstanceURLをhttps://[インスタンスのドメイン]/api/v1/statusesに書き換えます
-4. tootの$TOKENをアクセストークンに書き換えます
+3. tootの$InstanceURLをhttps://[インスタンスのドメイン]/api/v1/statusesに書き換えます(tlhは$InstanceURLをインスタンスのドメインに置き換える)
+4. tootの$TOKENをアクセストークンに書き換えます(tlhは$tokenをアクセストークンに置き換える)
 5. コマンド感覚でTootできます
 0. nullを草に置き換えると…
 ## 欠点
@@ -21,6 +22,7 @@ toot
 4. 私のやる気がない
 5. シェルやcurlに突っ込むと怒られる内容は使えない
 6. 結果が割りとがばい
+7. 追記が下手
 ## Get_Api.shについて
 ### 説明
 Get_Api.shは対話形式でAPIを取れるだけのshです
