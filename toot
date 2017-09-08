@@ -1,6 +1,6 @@
 #!/bin/sh
-mes="test"
-vis="public"
+mes="test" # toot空打ちの時投稿する文字列を定義
+vis="public" # 公開範囲を指定
 if [ -t 0 ]; then
   if [ $# -ne 1 ]; then
     sta=`curl -F "status=$mes" -F "visibility=$vis" -sS $InstanceURL --header "Authorization: Bearer $TOKEN" -o /dev/null -w '%{http_code}'`
@@ -14,8 +14,8 @@ if [ -t 0 ]; then
       echo "toot             $mesを投稿"
       exit 0
     else
-	    sta=`curl -F "status=$1" -F "visibility=$vis" -sS $InstanceURL --header "Authorization: Bearer $TOKEN" -o /dev/null -w '%{http_code}'`
-	  fi
+      sta=`curl -F "status=$1" -F "visibility=$vis" -sS $InstanceURL --header "Authorization: Bearer $TOKEN" -o /dev/null -w '%{http_code}'`
+    fi
 fi
 else
   sta=`curl -F "status=$(cat -)" -F "visibility=$vis" -sS $InstanceURL --header "Authorization: Bearer $TOKEN" -o /dev/null -w '%{http_code}'`
