@@ -1,9 +1,12 @@
 #!/bin/sh
 mes="test" # toot空打ちの時投稿する文字列を定義
 vis="public" # 公開範囲を指定
+url="https://url" # URLを指定
+token="token" # トークンを指定
+
 if [ -t 0 ]; then
   if [ $# -ne 1 ]; then
-    sta=`curl -F "status=$mes" -F "visibility=$vis" -sS $InstanceURL --header "Authorization: Bearer $TOKEN" -o /dev/null -w '%{http_code}'`
+    sta=`curl -F "status=$mes" -F "visibility=$vis" -sS "$url" --header "Authorization: Bearer $token" -o /dev/null -w '%{http_code}'`
   else
     if [ $1 = "--help" ]; then
       echo "ConsoleTooter v0.0.1"
@@ -14,11 +17,11 @@ if [ -t 0 ]; then
       echo "toot             $mesを投稿"
       exit 0
     else
-      sta=`curl -F "status=$1" -F "visibility=$vis" -sS $InstanceURL --header "Authorization: Bearer $TOKEN" -o /dev/null -w '%{http_code}'`
+      sta=`curl -F "status=$1" -F "visibility=$vis" -sS "$url" --header "Authorization: Bearer $token" -o /dev/null -w '%{http_code}'`
     fi
-fi
+  fi
 else
-  sta=`curl -F "status=$(cat -)" -F "visibility=$vis" -sS $InstanceURL --header "Authorization: Bearer $TOKEN" -o /dev/null -w '%{http_code}'`
+  sta=`curl -F "status=$(cat -)" -F "visibility=$vis" -sS "$url" --header "Authorization: Bearer $token" -o /dev/null -w '%{http_code}'`
 fi
 
 if [ $sta = 200 ]; then 
