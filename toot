@@ -1,27 +1,29 @@
 #!/bin/sh
-mes="null" # toot空打ちの時投稿する文字列を定義
+mes="test"
+vis="public"
 if [ -t 0 ]; then
   if [ $# -ne 1 ]; then
-    sta=`curl -F "status=$mes" -sS $InstanceURL --header "Authorization: Bearer $TOKEN" -o /dev/null -w '%{http_code}'`
+    sta=`curl -F "status=$mes" -F "visibility=$vis" -sS $InstanceURL --header "Authorization: Bearer $TOKEN" -o /dev/null -w '%{http_code}'`
   else
     if [ $1 = "--help" ]; then
       echo "ConsoleTooter v0.0.1"
       echo "コンソールで作業中にちょっとTootしたくなったときに使えます"
-      echo "Github: https://github.com/SH-OToS/ConsoleTooter\n"
-      echo "toot [内容]      [内容を投稿]"
+      echo "Github: https://github.com/SH-OToS/ConsoleTooter"
+      echo "現在の公開範囲: $vis"
+      echo "\ntoot [内容]      [内容を投稿]"
       echo "toot             $mesを投稿"
       exit 0
     else
-      sta=`curl -F "status=$1" -sS $InstanceURL --header "Authorization: Bearer $TOKEN" -o /dev/null -w '%{http_code}'`
-    fi
+	    sta=`curl -F "status=$1" -F "visibility=$vis" -sS $InstanceURL --header "Authorization: Bearer $TOKEN" -o /dev/null -w '%{http_code}'`
+	  fi
 fi
 else
-  sta=`curl -F "status=$(cat -)" -sS $InstanceURL --header "Authorization: Bearer $TOKEN" -o /dev/null -w '%{http_code}'`
+  sta=`curl -F "status=$(cat -)" -F "visibility=$vis" -sS $InstanceURL --header "Authorization: Bearer $TOKEN" -o /dev/null -w '%{http_code}'`
 fi
 
 if [ $sta = 200 ]; then 
-echo "200 OK!"
+  echo "200 OK!"
 else
-echo "Error!!!"
+  echo "Error!!!"
 fi
 exit 0
