@@ -7,17 +7,17 @@ toot [内容]
 command | toot      
 toot  
 ### tootのOption
-1. --help         helpを表示します                 
-2. --direct       公開範囲、ダイレクトでtootします                              
-3. --private      公開範囲、非公開でtootします                                      
-4. --unlisted     公開範囲、未収載でtootします                                
-5. --public       公開範囲、公開でtootします                                 
+* --help         helpを表示します                 
+* --direct       公開範囲、ダイレクトでtootします                              
+* --private      公開範囲、非公開でtootします                                      
+* --unlisted     公開範囲、未収載でtootします                                
+* --public       公開範囲、公開でtootします                                 
 
 ### タイムラインの書式
-tlh     
-tlh [リミット数]    
-tlp      
-tlp [リミット数]   
+* tlh     
+* tlh [リミット数]    
+* tlp      
+* tlp [リミット数]   
 
 ## 使い方
 1. まず適当にパスが通っている場所にtootを置きます
