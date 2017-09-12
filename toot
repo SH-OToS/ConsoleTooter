@@ -4,11 +4,53 @@ vis="public" # 公開範囲を指定
 url="https://url" # URLを指定
 token="token" # トークンを指定
 
+# Get Option!!
+f_help=1
+param=""
+for OPT in "$@"
+do
+  case "$OPT" in
+    '--help' )
+      f_help=0
+      ;;
+    '--direct' )
+      vis="direct"
+      if [ ! -z "$2" ]; then
+        shift
+      fi
+      ;;
+    '--private' )
+      vis="private"
+      if [ ! -z "$2" ]; then
+        shift
+      fi
+      ;;
+    '--unlisted' )
+      vis="unlisted"
+      if [ ! -z "$2" ]; then
+        shift
+      fi
+      ;;
+    '--public' )
+      vis="public"
+      if [ ! -z "$2" ]; then
+        shift
+      fi
+      ;;
+    *)
+      if [ ! -z "$1" ]; then
+        tmp=`echo $param`
+        param=`echo "$tmp $1"`
+      fi
+      ;;
+  esac
+done
+
 if [ -t 0 ]; then
-  if [ $# -ne 1 ]; then
+  if [ $# -lt 1 ]; then
     curl -F "status=$mes" -F "visibility=$vis" -sS "$url" --header "Authorization: Bearer $token" -o /dev/null -w '%{http_code}'
   else
-    if [ $1 = "--help" ]; then
+    if [ $f_help = "0" ]; then
       echo "ConsoleTooter v0.0.1"
       echo "コンソールで作業中にちょっとTootしたくなったときに使えます"
       echo "Github: https://github.com/SH-OToS/ConsoleTooter"
@@ -17,7 +59,7 @@ if [ -t 0 ]; then
       echo "toot             $mesを投稿"
       exit 0
     else
-      curl -F "status=$1" -F "visibility=$vis" -sS "$url" --header "Authorization: Bearer $token" -o /dev/null -w '%{http_code}'
+      curl -F "status=$param" -F "visibility=$vis" -sS "$url" --header "Authorization: Bearer $token" -o /dev/null -w '%{http_code}'
     fi
   fi
 else
