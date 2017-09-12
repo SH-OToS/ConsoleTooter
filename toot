@@ -1,8 +1,8 @@
 #!/bin/sh
 mes="test" # toot空打ちの時投稿する文字列を定義
 vis="public" # 公開範囲を指定
-url="https://url" # URLを指定
-token="token" # トークンを指定
+url="" # URLを指定
+token="" # トークンを指定
 
 # Get Option!!
 f_help=1
