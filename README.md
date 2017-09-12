@@ -7,11 +7,11 @@ toot [内容]
 command | toot      
 toot  
 ### tootのOption
---help         helpを表示します                             
---direct       公開範囲、ダイレクトでtootします                                       
---private      公開範囲、非公開でtootします                                      
---unlisted     公開範囲、未収載でtootします                                
---public       公開範囲、公開でtootします                                 
+1. --help         helpを表示します                 
+2. --direct       公開範囲、ダイレクトでtootします                              
+3. --private      公開範囲、非公開でtootします                                      
+4. --unlisted     公開範囲、未収載でtootします                                
+5. --public       公開範囲、公開でtootします                                 
 
 ### タイムラインの書式
 tlh     
@@ -45,7 +45,7 @@ tlp [リミット数]
 12. ブーストの表示がおかしい
 13. CWが仕事しない
 14. タイムラインを使わないならきれいなコード
-16. タイムラインの表示は実装済機能に入れてない
+15. タイムラインの表示は実装済機能に入れてない
 ## Get_Api.shについて
 ### 説明
 Get_Api.shは対話形式でAPIを取れるだけのshです
