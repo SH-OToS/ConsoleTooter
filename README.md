@@ -4,7 +4,7 @@
 一応TLも見れます(ガバガバ実装)      
 ## 書式
 toot [内容]       
-command | toot --pipe      
+command | toot --pipe                  
 toot  
 ### tootのOption
 * --help         helpを表示します                 
