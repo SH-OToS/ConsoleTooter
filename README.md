@@ -4,7 +4,7 @@
 一応TLも見れます(ガバガバ実装)      
 ## 書式
 toot [内容]       
-command | toot      
+command | toot --pipe      
 toot  
 ### tootのOption
 * --help         helpを表示します                 
@@ -12,7 +12,8 @@ toot
 * --private      公開範囲、非公開でtootします                                      
 * --unlisted     公開範囲、未収載でtootします                                
 * --public       公開範囲、公開でtootします                                 
-
+* --cw           CWありでtootします
+* --pipe         パイプから取得した文字列をtootします
 ### タイムラインの書式
 * tlh     
 * tlh [リミット数]    
