@@ -3,9 +3,9 @@
 コンソールで作業中にちょっとTootしたくなったときに使えます      
 一応TLも見れます(ガバガバ実装)      
 ## 書式
-toot [内容]       
-command | toot --pipe                  
-toot  
+* toot [内容]       
+* command | toot --pipe                  
+* toot  
 ### tootのOption
 * --help         helpを表示します                 
 * --direct       公開範囲、ダイレクトでtootします                              
