@@ -70,6 +70,15 @@ if [ $f_help = "0" ]; then # helpを呼び出すかの判定
   echo "デフォルトの公開範囲: $vis"
   echo "\ntoot [内容]      [内容を投稿]"
   echo "toot             $mesを投稿"
+  echo "command | toot --pipe"
+  echo "Option"
+  echo "--help         helpを表示します"
+  echo "--direct       公開範囲、ダイレクトでtootします"
+  echo "--private      公開範囲、非公開でtootします"
+  echo "--unlisted     公開範囲、未収載でtootします"
+  echo "--public       公開範囲、公開でtootします"
+  echo "--cw           CWありでtootします"
+  echo "--pipe         パイプから取得した文字列をtootします"
   exit 0
 fi
 
