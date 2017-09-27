@@ -82,7 +82,7 @@ if [ $f_help = "0" ]; then # helpを呼び出すかの判定
   exit 0
 fi
 
-if [ -z $param ]; then # 空打ちかの判定
+if [ -z "$param" ]; then # 空打ちかの判定
   if [ $f_pipe = "0" ]; then # パイプのフラグが立っているかの判定
     if [ ! -t 0 ]; then # パイプの判定
       if [ $f_cw = "0" ]; then # CWの判定
