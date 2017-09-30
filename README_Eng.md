@@ -10,12 +10,14 @@ Please use it at your own risk when using it
 * command | toot --pipe                  
 * toot        
 ## Option
-* --direct      Specify visibility as Direct        
-* --private     Specify visibility as private            
+```
+--direct        Specify visibility as Direct        
+--private       Specify visibility as private            
 * --unlisted    Specify visibility as unlisted           
 * --public      Specify visibility as public           
 * --cw          Use CW            
 * --pipe        Get string from pipe       
+```
 ## Preparation
 1. Place "toot" where the path passes               
 2. Get access token of your favorite instance
