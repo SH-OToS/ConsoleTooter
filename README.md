@@ -6,14 +6,15 @@
 * command | toot --pipe                  
 * toot  
 ### Option
-* --help         helpを表示します                 
-* --direct       公開範囲、ダイレクトでtootします                              
-* --private      公開範囲、非公開でtootします                                      
-* --unlisted     公開範囲、未収載でtootします                                
-* --public       公開範囲、公開でtootします                                 
-* --cw           CWありでtootします
-* --pipe         パイプから取得した文字列をtootします
-
+```
+--help         helpを表示します                 
+--direct       公開範囲、ダイレクトでtootします                              
+--private      公開範囲、非公開でtootします                                      
+--unlisted     公開範囲、未収載でtootします                                
+--public       公開範囲、公開でtootします                                 
+--cw           CWありでtootします
+--pipe         パイプから取得した文字列をtootします
+```
 ## 使い方
 1. まず適当にパスが通っている場所にtootを置きます
 2. お好きなインスタンスのアクセストークンを取得します
